@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browser History Map</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <div id="app">
+    <header id="topbar">
+      <div id="topbar-left">
+        <span id="logo-mark"></span>
+        <span id="app-title">History Map</span>
+      </div>
+      <div id="topbar-center">
+        <div id="stats-row">
+          <span class="stat"><span class="stat-val" id="stat-nodes">—</span><span class="stat-label">sites</span></span>
+          <span class="stat-div"></span>
+          <span class="stat"><span class="stat-val" id="stat-edges">—</span><span class="stat-label">connections</span></span>
+          <span class="stat-div"></span>
+          <span class="stat"><span class="stat-val" id="stat-visits">—</span><span class="stat-label">visits (7d)</span></span>
+        </div>
+      </div>
+      <div id="topbar-right">
+        <button id="btn-refresh" title="Refresh graph">Refresh</button>
+        <div id="updated-label">—</div>
+      </div>
+    </header>
+
+    <div id="main">
+      <div id="graph-wrap">
+        <svg id="graph-svg"></svg>
+        <div id="loading-overlay">
+          <div id="loading-inner">
+            <div id="loading-spinner"></div>
+            <div id="loading-text">Reading your history...</div>
+          </div>
+        </div>
+        <div id="legend">
+          <div class="leg-row"><span class="leg-dot big"></span><span class="leg-text">more visits</span></div>
+          <div class="leg-row"><span class="leg-line thick"></span><span class="leg-text">frequent jump</span></div>
+        </div>
+        <div id="zoom-controls">
+          <button id="btn-zoom-in">+</button>
+          <button id="btn-zoom-out">−</button>
+          <button id="btn-zoom-fit">fit</button>
+        </div>
+      </div>
+
+      <aside id="sidebar" class="hidden">
+        <div id="sidebar-header">
+          <div id="sidebar-domain"></div>
+          <button id="sidebar-close">✕</button>
+        </div>
+        <div id="sidebar-stats">
+          <div class="sstat">
+            <div class="sstat-val" id="ss-visits">—</div>
+            <div class="sstat-label">total visits</div>
+          </div>
+          <div class="sstat">
+            <div class="sstat-val" id="ss-connections">—</div>
+            <div class="sstat-label">connected sites</div>
+          </div>
+        </div>
+        <div id="sidebar-section-label">Connected to</div>
+        <div id="sidebar-neighbors"></div>
+        <div id="sidebar-section-label2">Visit timeline (7d)</div>
+        <div id="sidebar-timeline"></div>
+      </aside>
+    </div>
+  </div>
+
+  <script src="lib/d3.min.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
