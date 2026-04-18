@@ -10,26 +10,26 @@ Visualize your browsing history as a live force-directed graph. Sites cluster by
 
 ## What it looks like
 
-- **Nodes** — every domain you visited in the last 7 days. Size = visit count.
-- **Edges** — drawn between sites you navigated between within 30 seconds. Thickness = how often you made that jump.
-- **Clusters** — your actual mental models and distraction loops, visible at a glance.
-- **Sidebar** — click any node to see connected sites and a 7-day visit bar chart.
+- **Nodes** - every domain you visited in the last 7 days. Size = visit count.
+- **Edges** - drawn between sites you navigated between within 30 seconds. Thickness = how often you made that jump.
+- **Clusters** - your actual mental models and distraction loops, visible at a glance.
+- **Sidebar** - click any node to see connected sites and a 7-day visit bar chart.
 
 ---
 
 ## Install (no developer account needed)
 
-> Works on any Chrome-based browser — Chrome, Edge, Brave, Arc.
+> Works on any Chrome-based browser - Chrome, Edge, Brave, Arc.
 
-**Option A — drag and drop (easiest)**
+**Option A - drag and drop (easiest)**
 
 1. Download `browser-history-map.zip` from the [Releases](../../releases) page
 2. Open `chrome://extensions` in your browser
 3. Toggle **Developer mode** on (top right corner)
 4. Drag and drop the `.zip` file anywhere onto the extensions page
-5. Click the extension icon in your toolbar — the graph opens in a new tab
+5. Click the extension icon in your toolbar - the graph opens in a new tab
 
-**Option B — load unpacked**
+**Option B - load unpacked**
 
 1. Download and unzip `browser-history-map.zip`
 2. Open `chrome://extensions`
@@ -70,26 +70,26 @@ All data stays on your machine. Nothing is sent anywhere.
 
 1. Fetches up to 5,000 history items from the last 7 days via the Chrome History API
 2. Extracts domains and visit timestamps, strips internal Chrome URLs
-3. Finds sequential visits where two different sites were visited within 30 seconds of each other — those become edges
+3. Finds sequential visits where two different sites were visited within 30 seconds of each other - those become edges
 4. Aggregates edge weights (how many times you made each jump)
-5. Runs a D3 force simulation — charge repulsion keeps nodes apart, link force pulls connected nodes together, collision force prevents overlap
+5. Runs a D3 force simulation - charge repulsion keeps nodes apart, link force pulls connected nodes together, collision force prevents overlap
 6. Node size and color intensity scale with visit count; edge thickness and opacity scale with transition frequency
 
 ---
 
 ## Stack
 
-- **Chrome Extension Manifest V3** — service worker background, no persistent pages
-- **D3.js v7** — force simulation, zoom, drag
-- **Chrome History API** — local history access
-- **Chrome Storage API** — local graph caching
-- Vanilla JS + CSS — no build step, no framework
+- **Chrome Extension Manifest V3** - service worker background, no persistent pages
+- **D3.js v7** - force simulation, zoom, drag
+- **Chrome History API** - local history access
+- **Chrome Storage API** - local graph caching
+- Vanilla JS + CSS - no build step, no framework
 
 ---
 
 ## Development
 
-Clone the repo and load unpacked — no build step needed.
+Clone the repo and load unpacked - no build step needed.
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/browser-history-map.git
