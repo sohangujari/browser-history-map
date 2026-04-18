@@ -92,7 +92,7 @@ All data stays on your machine. Nothing is sent anywhere.
 Clone the repo and load unpacked — no build step needed.
 
 ```bash
-git clone https://github.com/sohangujari/browser-history-map.git
+git clone https://github.com/YOUR_USERNAME/browser-history-map.git
 ```
 
 Then load the folder via `chrome://extensions` → **Load unpacked**.
